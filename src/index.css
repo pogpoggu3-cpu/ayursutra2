@@ -1,0 +1,128 @@
+@@ .. @@
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
++
++/* Custom animations */
++@keyframes blob {
++  0% {
++    transform: translate(0px, 0px) scale(1);
++  }
++  33% {
++    transform: translate(30px, -50px) scale(1.1);
++  }
++  66% {
++    transform: translate(-20px, 20px) scale(0.9);
++  }
++  100% {
++    transform: translate(0px, 0px) scale(1);
++  }
++}
++
++@keyframes float {
++  0%, 100% {
++    transform: translateY(0px);
++  }
++  50% {
++    transform: translateY(-20px);
++  }
++}
++
++@keyframes slide-up {
++  from {
++    opacity: 0;
++    transform: translateY(30px);
++  }
++  to {
++    opacity: 1;
++    transform: translateY(0);
++  }
++}
++
++@keyframes fade-in {
++  from {
++    opacity: 0;
++  }
++  to {
++    opacity: 1;
++  }
++}
++
++.animate-blob {
++  animation: blob 7s infinite;
++}
++
++.animate-float {
++  animation: float 6s ease-in-out infinite;
++}
++
++.animate-slide-up {
++  animation: slide-up 0.8s ease-out forwards;
++}
++
++.animate-fade-in {
++  animation: fade-in 0.8s ease-out forwards;
++}
++
++.animation-delay-200 {
++  animation-delay: 200ms;
++}
++
++.animation-delay-400 {
++  animation-delay: 400ms;
++}
++
++.animation-delay-600 {
++  animation-delay: 600ms;
++}
++
++.animation-delay-800 {
++  animation-delay: 800ms;
++}
++
++.animation-delay-1000 {
++  animation-delay: 1000ms;
++}
++
++.animation-delay-2000 {
++  animation-delay: 2000ms;
++}
++
++.animation-delay-4000 {
++  animation-delay: 4000ms;
++}
++
++/* Scroll animations */
++.animate-on-scroll {
++  opacity: 0;
++  transform: translateY(30px);
++  transition: all 0.8s ease-out;
++}
++
++.animate-on-scroll.animate-fade-in {
++  opacity: 1;
++  transform: translateY(0);
++}
++
++/* Smooth scrolling */
++html {
++  scroll-behavior: smooth;
++}
++
++/* Custom scrollbar */
++::-webkit-scrollbar {
++  width: 8px;
++}
++
++::-webkit-scrollbar-track {
++  background: #f1f5f9;
++}
++
++::-webkit-scrollbar-thumb {
++  background: #6b9f7c;
++  border-radius: 4px;
++}
++
++::-webkit-scrollbar-thumb:hover {
++  background: #5a8769;
++}
